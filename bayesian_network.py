@@ -69,7 +69,7 @@ print("\ncond distr of E:")
 print(d_E)
 
 ##########################################
-# Pas2: We generate N data points
+# Step2: We generate N data points
 ##########################################
 N=100000
 sampler = BayesianModelSampling(model)
@@ -78,7 +78,7 @@ print("\nStep 2: We generate N data points")
 print(data.head())
 
 ##########################################
-# Pas 3: "We "forget" the conditional distribution and we use the data and the graph structure to estimate them
+# Step 3: "We "forget" the conditional distribution and we use the data and the graph structure to estimate them
 ##########################################
 
 # we create a new model with the same structure but without conditional dstributions
@@ -92,7 +92,7 @@ for cpd in estimated_model.get_cpds():
     print("Cond. distr of {}: \n{}".format(cpd.variable, cpd))
 
 ##########################################
-# Pas4: Using censored data, we use Expectation Maximization to estimate the parameters of the model
+# Step4: Using censored data, we use Expectation Maximization to estimate the parameters of the model
 ##########################################
 
 
